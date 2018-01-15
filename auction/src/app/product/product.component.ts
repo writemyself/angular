@@ -33,7 +33,5 @@ export class Product {
     public rating: number,
     public desc: string,
     public categories: Array<string>
-  ) {
-
-  }
+  ) {}
 }
