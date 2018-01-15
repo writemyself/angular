@@ -4,10 +4,10 @@ import { LoggerService } from './logger.service';
 @Injectable()
 export class ProductService {
 
-	constructor(private loggerService: LoggerService) { }
+	constructor(public loggerService: LoggerService) { }
 
 	getProduct(): Product {
-		this.loggerService.log("aaaaa");
+		this.loggerService.log("一个服务");
 		return new Product(0, "iphone X", 10000, "这是iphone X")
 	}
 

@@ -5,11 +5,7 @@ import { AntherProductService } from '../shared/anther-product.service';
 @Component({
 	selector: 'app-product2',
 	templateUrl: './product2.component.html',
-	styleUrls: ['./product2.component.css'],
-	providers: [{
-		provide: ProductService,
-		useClass: AntherProductService
-	}]
+	styleUrls: ['./product2.component.css']
 })
 export class Product2Component implements OnInit {
 

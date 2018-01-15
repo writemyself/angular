@@ -7,6 +7,7 @@ import { Product1Component } from './product1/product1.component';
 import { ProductService } from './shared/product.service';
 import { Product2Component } from './product2/product2.component';
 import { LoggerService } from './shared/logger.service';
+import { AntherProductService } from './shared/anther-product.service';
 
 
 @NgModule({
@@ -18,7 +19,20 @@ import { LoggerService } from './shared/logger.service';
 	imports: [
 		BrowserModule
 	],
-	providers: [ProductService,LoggerService],
+	providers: [{
+    provide: ProductService,
+    useFactory : (logger:LoggerService,isDev)=>{
+      if(isDev){
+        return new ProductService(logger);
+      }else{
+        return new AntherProductService(logger);
+      }
+    },
+    deps:[LoggerService,"IS_DEV_ENV"]
+  },LoggerService,
+  {
+    provide:"IS_DEV_ENV", useValue: false
+  }],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }
