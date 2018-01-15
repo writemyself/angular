@@ -1,0 +1,5 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<a [routerLink]="['/home']">主页</a>
+<a [routerLink]="['/product']" [queryParams] = "{id:1}">商品详情页</a>
+<input type="button" value="商品详情" (click)="toProductDetails()">
+<router-outlet></router-outlet>

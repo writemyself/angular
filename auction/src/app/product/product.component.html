@@ -1,0 +1,13 @@
+<div *ngFor="let list of products" class="col-md-4 col-sm-4 col-lg-4">
+  <div class="thumbnail">
+    <img [src]="imgUrl" alt="">
+    <div class="caption">
+      <h4 class="pull-right">{{list.price}}</h4>
+      <h4><a href="">{{list.title}}</a></h4>
+      <p>{{list.desc}}</p>
+    </div>
+    <div>
+      <app-stars [rating] = "list.rating"></app-stars>
+    </div>
+  </div>
+</div>
