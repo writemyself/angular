@@ -2,8 +2,8 @@
   <div class="thumbnail">
     <img [src]="imgUrl" alt="">
     <div class="caption">
-      <h4 class="pull-right">{{list.price}}</h4>
-      <h4><a href="">{{list.title}}</a></h4>
+      <h4 class="pull-right">{{list.price}} 元</h4>
+      <h4><a  [routerLink]="['/product',product.id]">{{list.title}}</a></h4>
       <p>{{list.desc}}</p>
     </div>
     <div>

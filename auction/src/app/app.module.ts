@@ -1,3 +1,4 @@
+import { ProductService } from './service/product/product.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -14,7 +15,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 
 const routerConfig: Routes = [
   { path:"", component: HomeComponent },
-  { path:"product/:product", component: ProductDetailComponent}
+  { path:"product/:productId", component: ProductDetailComponent}
 ];
 
 @NgModule({
@@ -32,7 +33,7 @@ const routerConfig: Routes = [
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
