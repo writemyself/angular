@@ -9,7 +9,7 @@ import { SearchComponent } from './search/search.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { ProductComponent } from './product/product.component';
 import { StarsComponent } from './stars/stars.component';
-import {Routes} from "@angular/router";
+import {Routes,RouterModule} from "@angular/router";
 import { HomeComponent } from './home/home.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 
@@ -31,7 +31,8 @@ const routerConfig: Routes = [
     ProductDetailComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(routerConfig)
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]
