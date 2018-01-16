@@ -8,6 +8,14 @@ import { SearchComponent } from './search/search.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { ProductComponent } from './product/product.component';
 import { StarsComponent } from './stars/stars.component';
+import {Routes} from "@angular/router";
+import { HomeComponent } from './home/home.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+
+const routerConfig: Routes = [
+  { path:"", component: HomeComponent },
+  { path:"product/:product", component: ProductDetailComponent}
+];
 
 @NgModule({
   declarations: [
@@ -17,7 +25,9 @@ import { StarsComponent } from './stars/stars.component';
     SearchComponent,
     CarouselComponent,
     ProductComponent,
-    StarsComponent
+    StarsComponent,
+    HomeComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule

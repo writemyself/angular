@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class ProductService {
+    constructor() { }
     private products: Product[] = [
     new Product(1,"第一个商品",10,1,"第一个商品的描述",["商品类别1","商品类别2"]),
     new Product(2,"第一个商品",20,2,"第二个商品的描述",["商品类别1","商品类别2"]),
@@ -18,7 +19,7 @@ export class ProductService {
     new Comment(4,2,"2017-04-16","xiaosong",5,"这是商品注释4")
   ];
 
-  constructor() { }
+
   //获取商品
   getProducts(){
     return this.products;
