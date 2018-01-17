@@ -17,7 +17,6 @@ export class StarsComponent implements OnInit {
     for(let i =1; i<=5; i++) {
       this.stars.push(i>this.rating);
     }
-    // this.stars = [false, true, true, true, true];
   }
 
 }

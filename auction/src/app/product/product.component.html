@@ -1,13 +1,14 @@
-<div *ngFor="let list of products" class="col-md-4 col-sm-4 col-lg-4">
+<div *ngFor="let product of products" class="col-md-4 col-sm-4 col-lg-4">
   <div class="thumbnail">
     <img [src]="imgUrl" alt="">
     <div class="caption">
-      <h4 class="pull-right">{{list.price}} 元</h4>
-      <h4><a  [routerLink]="['/product',product.id]">{{list.title}}</a></h4>
-      <p>{{list.desc}}</p>
+      <h4 class="pull-right">{{ product.price}} 元</h4>
+      <!-- 将每条商品的id放在路由上，点击时传给与路由相对应的组件 -->
+      <h4><a  [routerLink]="['/product',product.id]">{{ product.title }}</a></h4>
+      <p>{{ product.desc}}</p>
     </div>
     <div>
-      <app-stars [rating] = "list.rating"></app-stars>
+      <app-stars [rating] = "product.rating"></app-stars>
     </div>
   </div>
 </div>

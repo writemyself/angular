@@ -8,17 +8,18 @@ import { ProductService } from '../service/product/product.service';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
+
   constructor(private productService: ProductService) { }
+
   // 产品数组
-  private products: Array<Product>;
+  private products: Product[];
+  
   // 图片地址
   private imgUrl: string = 'http://placehold.it/800x300';
-
 
   // 组件实例化后会被调用一次，用来初始化数据
   ngOnInit() {
     this.products = this.productService.getProducts();
-    console.log(this.products);
   }
 }
 export class Product {

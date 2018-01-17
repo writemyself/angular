@@ -10,9 +10,7 @@ export class NavbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    $(document).click(function(){
-        console.log("click");
-      })
+
   }
 
 }
