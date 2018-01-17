@@ -1,14 +1,18 @@
 <div *ngFor="let product of products" class="col-md-4 col-sm-4 col-lg-4">
-  <div class="thumbnail">
-    <img [src]="imgUrl" alt="">
-    <div class="caption">
-      <h4 class="pull-right">{{ product.price}} 元</h4>
-      <!-- 将每条商品的id放在路由上，点击时传给与路由相对应的组件 -->
-      <h4><a  [routerLink]="['/product',product.id]">{{ product.title }}</a></h4>
-      <p>{{ product.desc}}</p>
+    <div class="thumbnail">
+        <img [src]="imgUrl" alt="">
+        <div class="caption">
+            <h4 class="pull-right">{{ product.price}} 元</h4>
+            <!-- 将每条商品的id放在路由上，点击时传给与路由相对应的组件这里是跳转到ProductDetail组件并把product.id传进组件内 -->
+            <!-- 在ProductDetail组件中使用 snapshot.params 获取传入参数 并且使用这种方法传入参数在地址栏中是可见是路由的使用方法之一 -->
+            <h4>
+                <a [routerLink]="['/productDetail',product.id]">{{ product.title }}</a>
+            </h4>
+            <p>{{ product.desc}}</p>
+        </div>
+        <div>
+            <!-- 使用[]可以将数据传入组件内这种数据绑定的方式是单向的 -->
+            <app-stars [rating]="product.rating"></app-stars>
+        </div>
     </div>
-    <div>
-      <app-stars [rating] = "product.rating"></app-stars>
-    </div>
-  </div>
 </div>
