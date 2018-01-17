@@ -18,7 +18,7 @@ const routerConfig: Routes = [
     //路由为空时重定向到home组件
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: "home", component: HomeComponent },
-    { path: "product/:productId", component: ProductDetailComponent },
+    { path: "productDetail/:productId", component: ProductDetailComponent },
     {
         //页面不存在路由，一定放最后
         path: '**', component: Page404Component
