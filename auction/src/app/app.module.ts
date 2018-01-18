@@ -12,17 +12,17 @@ import { StarsComponent } from './stars/stars.component';
 import { Routes, RouterModule } from "@angular/router";
 import { HomeComponent } from './home/home.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
-// import { Page404Component } from './page404/page404.component';
+import { Page404Component } from './page404/page404.component';
 
 const routerConfig: Routes = [
     //路由为空时重定向到home组件
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: "home", component: HomeComponent },
     { path: "productDetail/:productId", component: ProductDetailComponent },
-    // {
+    {
         //页面不存在路由，一定放最后
-        // path: '**', component: Page404Component
-    // }
+        path: '**', component: Page404Component
+    }
 ];
 
 @NgModule({

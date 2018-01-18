@@ -3,3 +3,11 @@
 </p>
 <!-- 事件绑定 -->
 <button (click)="doOnclick($event)">点击</button>
+<br>
+<!-- 属性绑定 -->
+<img [src]="imgUrl" alt="">
+<br>
+<!-- 插值表达式绑定 -->
+<!-- 插值表达式会被翻译为属性表达式 两种表达式实际上是一样的只是写法不同  -->
+<img src="{{ imgUrl }}" alt="">
+<!-- angular实现数据绑定是DOM绑定 -->
