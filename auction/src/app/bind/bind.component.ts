@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class BindComponent implements OnInit {
 
     constructor() { }
-    private classStyle: string;
+    classStyle: string;
     doOnclick(event: any) {
         console.log(event);
         this.classStyle = "blue size";

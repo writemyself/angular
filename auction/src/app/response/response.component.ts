@@ -10,6 +10,7 @@ import { FormControl } from '@angular/forms'
 })
 export class ResponseComponent implements OnInit {
     searchInput: FormControl = new FormControl();
+    size:number = 8;
     constructor() {
         Observable.from([1, 2, 3, 4])
             .filter(e => e % 2 === 0)
