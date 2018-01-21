@@ -31,7 +31,7 @@ export class ResponseComponent implements OnInit {
         console.log(value);
     }
     getStockInfo(value:string){
-        console.log(value);
+        console.log(value,1111);
     }
     ngOnInit() {
     }
