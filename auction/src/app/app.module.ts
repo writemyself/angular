@@ -1,6 +1,7 @@
 import { ProductService } from './service/product/product.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms'
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -45,6 +46,7 @@ const routerConfig: Routes = [
     ],
     imports: [
         BrowserModule,
+        ReactiveFormsModule , //响应式编程模块
         RouterModule.forRoot(routerConfig)
     ],
     providers: [ProductService], //这里注入服务
