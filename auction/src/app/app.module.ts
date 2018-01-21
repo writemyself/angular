@@ -23,6 +23,7 @@ const routerConfig: Routes = [
     { path: "productDetail/:productId", component: ProductDetailComponent },
     //学习测试的页面路由加在后面
     { path: "bind", component: BindComponent },
+    { path: "response", component: ResponseComponent },
     //页面不存在路由，一定放最后
     { path: '**', component: Page404Component }
 ];
