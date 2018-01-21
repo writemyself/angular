@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { BindComponent } from './bind/bind.component';
 import { Page404Component } from './page404/page404.component';
+import { ResponseComponent } from './response/response.component';
 
 const routerConfig: Routes = [
     //路由为空时重定向到home组件
@@ -38,7 +39,8 @@ const routerConfig: Routes = [
         HomeComponent,
         ProductDetailComponent,
         BindComponent,
-        Page404Component
+        Page404Component,
+        ResponseComponent
     ],
     imports: [
         BrowserModule,
