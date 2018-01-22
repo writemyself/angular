@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Routes } from '@angular/router';
 import { ProductService } from '../service/product/product.service';
+import { FormControl } from '@angular/forms';
 
 @Component({
     selector: 'app-product',
@@ -9,10 +10,20 @@ import { ProductService } from '../service/product/product.service';
 })
 export class ProductComponent implements OnInit {
 
-    constructor(private productService: ProductService) { }
+    constructor(private productService: ProductService) {
+        this.titleFilter.valueChanges
+        .debounceTime(500 )
+        .subscribe(
+            (value:string) => this.keywords = value
+        );
+     }
+
+    keywords:string;
+
+    titleFilter: FormControl = new FormControl();
 
     // 产品数组
-    private products: Product[];
+    products: Product[];
 
     // 图片地址
     imgUrl: string = 'http://placehold.it/800x300';

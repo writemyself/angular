@@ -20,6 +20,7 @@ export class ResponseComponent implements OnInit {
             err => console.error(err),
             () => console.log("is end")
             );
+
         //响应式编程实现监听输入
         this.searchInput.valueChanges
         .debounceTime(500)

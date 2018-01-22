@@ -17,6 +17,7 @@ import { BindComponent } from './bind/bind.component';
 import { Page404Component } from './page404/page404.component';
 import { ResponseComponent } from './response/response.component';
 import { MultiplePipe } from './pipe/multiple.pipe';
+import { FilterPipe } from './pipe/filter.pipe';
 
 const routerConfig: Routes = [
     //路由为空时重定向到home组件
@@ -44,7 +45,8 @@ const routerConfig: Routes = [
         BindComponent,
         Page404Component,
         ResponseComponent,
-        MultiplePipe
+        MultiplePipe,
+        FilterPipe
     ],
     imports: [
         BrowserModule,
