@@ -36,6 +36,8 @@ export class ResponseComponent implements OnInit {
         console.log(value);
     }
     ngOnInit() {
+        console.log(this.searchInput);
+        
     }
 
 }
