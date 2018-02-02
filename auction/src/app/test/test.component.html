@@ -1,0 +1,26 @@
+<p>测试模块正常</p>
+<div>
+    <p>父组件传递数据给子组件</p>
+    <p>将父组件中的 <span class="font-red">{{ title || "当前未传值" }}</span> 传递给子组件</p>
+    <p>在父组件testChil组件传值 <span class="font-red">{{ value }}</span></p>
+    <input type="text" #myField (keyup)="onDoKeyUp(myField.value)">
+    <input type="text" #myFieldB (keyup)="onDoKeyUpB(myFieldB.value)">
+    <app-test-child [title]="title" [titleB]="titleB" (onValue)="doOnValue($event)" #paramsLocation></app-test-child>
+</div>
+<hr>
+<ul>
+    <li>
+        <input type="text" (keyup.enter)="doOnClick($event)">
+    </li>
+</ul>
+<hr>
+<p>父组件与子组件通过本地变量#paramsLocation可以访问子组件中的属性以及调用子组件中的方法，真的是十分方便，但是只能在父组件的模板中进行访问，父组件中的ts没有权限进行访问</p>
+<button (click)="paramsLocation.addCount()">按钮</button>
+<p>{{ paramsLocation.count }}</p>
+<p>依靠@ViewChild装饰实现在父组件的ts中进行访问</p>
+<button (click)="addCount()">按钮</button>
+<p>{{ count() }}</p>
+<p>父子组件还有通过服务来进行通讯的，暂时不看</p>
+
+
+

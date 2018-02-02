@@ -1,0 +1,6 @@
+<p>子组件接收到父组件中的值 <span class="font-red" >{{ title || "父组件未传值" }}</span></p>
+<p>子组件接收到父组件中的值 <span class="font-red" >{{ titleB || "父组件未传值" }}</span></p>
+<p >子组件中的输入框 <span class="font-red">{{ value }}</span></p>
+<p>
+    <input type="text" #myField (keyup)="doKeyup(myField.value)">
+</p>
