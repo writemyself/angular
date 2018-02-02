@@ -11,3 +11,6 @@ input{
     border: 1px solid gray;
     border-radius: 2px;
 }
+.font-red{
+    color:red;
+}

@@ -20,6 +20,7 @@ import { ResponseComponent } from './response/response.component';
 import { MultiplePipe } from './pipe/multiple.pipe';
 import { FilterPipe } from './pipe/filter.pipe';
 import { TestComponent } from './test/test.component';
+import { TestChildComponent } from './test-child/test-child.component';
 
 const routerConfig: Routes = [
     //路由为空时重定向到home组件
@@ -50,7 +51,8 @@ const routerConfig: Routes = [
         ResponseComponent,
         MultiplePipe,
         FilterPipe,
-        TestComponent
+        TestComponent,
+        TestChildComponent
     ],
     imports: [
         BrowserModule,
