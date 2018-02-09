@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            height: 100px;
+            width: 100px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        var _box  = document.querySelector(".box");
+        //火狐下使用DOMMouseScroll，其他浏览器都是用mousewheel
+        if(_box.onmousewheel === null){
+            _box.onmousewheel = scrollFun;
+        }else{
+            // addEventListener false是在冒泡阶段执行，true是在捕获阶段执行
+            _box.addEventListener("DOMMouseScroll", scrollFun, false);
+        }
+
+        //放大处理
+        function scrollFun(e){
+            //事件的兼容性
+            e = e || window.event;
+            var _height = _box.offsetHeight,
+                _width = _box.offsetWidth,
+                // 火狐上使用detail取±3,其它浏览器使用wheelDelta取±120计算
+                _tag = e.wheelDelta ? e.wheelDelta : e.detail;
+                //判断状态设定宽高
+                _width = _tag > 0 ? parseInt(_width)*1.1 : parseInt(_width)*.9;
+                _height = _tag > 0 ? parseInt(_height)*1.1 : parseInt(_height)*.9;
+                // 样式
+                _style = "width:"+ _width +"px;height:" + _height + "px;"
+                _box.setAttribute('style', _style);
+        }
+    </script>
+</body>
+</html>
