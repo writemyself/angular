@@ -72,7 +72,7 @@
         _box.onmousedown = function(e){
             //阻止默认事件
             e.preventDefault();
-            console.log(e);
+
             //获取元素点击的父元素并存储数据
             var _curParent = _box.parentNode;
             var _parentHeight = _curParent.clientHeight;
@@ -102,6 +102,7 @@
                 _box.style.top = _lastY + "px";
                 _box.style.left = _lastX + "px";
             }
+            
             //元素移动
             document.addEventListener("mousemove", move, false);
             //当松开鼠标时移除事件
