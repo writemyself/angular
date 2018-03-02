@@ -2,7 +2,8 @@ import { ProductService } from './service/product/product.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { UtilService } from './service/util/util.service'
+import { UtilService } from './service/util/util.service';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -21,6 +22,7 @@ import { MultiplePipe } from './pipe/multiple.pipe';
 import { FilterPipe } from './pipe/filter.pipe';
 import { TestComponent } from './test/test.component';
 import { TestChildComponent } from './test-child/test-child.component';
+import { FormComponent } from './form/form.component';
 
 const routerConfig: Routes = [
     //路由为空时重定向到home组件
@@ -30,6 +32,7 @@ const routerConfig: Routes = [
     //学习测试的页面路由加在后面
     { path: "bind", component: BindComponent },
     { path: "response", component: ResponseComponent },
+    { path: "form", component: FormComponent},  //学习表单的模块
     { path: "test", component: TestComponent},
     //页面不存在路由，一定放最后
     { path: '**', component: Page404Component }
@@ -52,9 +55,11 @@ const routerConfig: Routes = [
         MultiplePipe,
         FilterPipe,
         TestComponent,
-        TestChildComponent
+        TestChildComponent,
+        FormComponent
     ],
     imports: [
+        FormsModule,//创建模板驱动的表单需要引入
         BrowserModule,
         ReactiveFormsModule , //响应式编程模块
         RouterModule.forRoot(routerConfig)

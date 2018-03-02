@@ -1,0 +1,8 @@
+<!-- <p>表单测试模块</p> -->
+<input type="text" (keyup)="doKeyUp_1($event)">
+<p class="font-red">1.直接传入$event是不好的据官方解释是说要把用户看到的视图模板和处理数据的组件分开</p>
+<p>{{ values_1 }}</p>
+<hr>
+<input type="text" #userIn (keyup)="doKeyUp_2(userIn.value)">
+<p class="font-red">2.使用模板引用变量（在标识符前加上井号 (#) 就能声明一个模板引用变量）</p>
+<p>{{ values_2 }}</p>
