@@ -12,7 +12,7 @@ export class ProductComponent implements OnInit {
 
     constructor(private productService: ProductService) {
         this.titleFilter.valueChanges
-        .debounceTime(500 )
+        .debounceTime(500)
         .subscribe(
             (value:string) => this.keywords = value
         );
@@ -21,7 +21,7 @@ export class ProductComponent implements OnInit {
     keywords:string;
 
     titleFilter: FormControl = new FormControl();
-
+    
     // 产品数组
     products: Product[];
 
