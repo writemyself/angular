@@ -32,5 +32,4 @@ export class TestChildComponent implements OnInit {
     ngOnChanges(changes: SimpleChange){
         console.log(changes);
     };
-
 }

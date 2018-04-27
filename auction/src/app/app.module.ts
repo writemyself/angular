@@ -23,6 +23,8 @@ import { FilterPipe } from './pipe/filter.pipe';
 import { TestComponent } from './test/test.component';
 import { TestChildComponent } from './test-child/test-child.component';
 import { FormComponent } from './form/form.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 const routerConfig: Routes = [
     //路由为空时重定向到home组件
@@ -34,6 +36,7 @@ const routerConfig: Routes = [
     { path: "response", component: ResponseComponent },
     { path: "form", component: FormComponent},  //学习表单的模块
     { path: "test", component: TestComponent},
+    { path: "parent", component: ParentComponent},
     //页面不存在路由，一定放最后
     { path: '**', component: Page404Component }
 ];
@@ -56,10 +59,12 @@ const routerConfig: Routes = [
         FilterPipe,
         TestComponent,
         TestChildComponent,
-        FormComponent
+        FormComponent,
+        ParentComponent,
+        ChildComponent
     ],
     imports: [
-        FormsModule,//创建模板驱动的表单需要引入
+        FormsModule,  //创建模板驱动的表单需要引入
         BrowserModule,
         ReactiveFormsModule , //响应式编程模块
         RouterModule.forRoot(routerConfig)
