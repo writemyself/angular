@@ -1,4 +1,10 @@
-<p>模版式表单需要引入FormsModule</p>
-<form action="">
-    
+<!-- <p>模版式表单需要引入FormsModule</p> -->
+<form #tempForm="ngForm" (ngSubmit)="onSubmit(tempForm.value)">
+    <input type="text" ngModel name="uName">
+    <input type="text" ngModel name="uPhone">
+    <div ngModelGroup = "psw">
+        <input type="password" ngModel name="uPassword">
+        <input type="password" ngModel name="ucPassword">
+    </div>
+    <button type="submit">提交</button>
 </form>

@@ -11,5 +11,7 @@ export class TempleteFormComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  onSubmit(a){
+    console.log(a);
+  }
 }
