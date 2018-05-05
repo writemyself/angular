@@ -2,7 +2,7 @@ import { ProductService } from './service/product/product.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { UtilService } from './service/util/util.service';
+// import { UtilService } from './service/util/util.service';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
@@ -25,6 +25,7 @@ import { TestChildComponent } from './test-child/test-child.component';
 import { FormComponent } from './form/form.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { TempleteFormComponent } from './templete-form/templete-form.component';
 
 const routerConfig: Routes = [
     //路由为空时重定向到home组件
@@ -37,6 +38,7 @@ const routerConfig: Routes = [
     { path: "form", component: FormComponent},  //学习表单的模块
     { path: "test", component: TestComponent},
     { path: "parent", component: ParentComponent},
+    { path: "templeteForm", component: TempleteFormComponent},
     //页面不存在路由，一定放最后
     { path: '**', component: Page404Component }
 ];
@@ -61,17 +63,18 @@ const routerConfig: Routes = [
         TestChildComponent,
         FormComponent,
         ParentComponent,
-        ChildComponent
+        ChildComponent,
+        TempleteFormComponent
     ],
     imports: [
         FormsModule,  //创建模板驱动的表单需要引入
         BrowserModule,
-        ReactiveFormsModule , //响应式编程模块
+        ReactiveFormsModule , //响应式表单编程模块
         RouterModule.forRoot(routerConfig)
     ],
     providers: [  //这里注入服务
         ProductService, //商品服务
-        UtilService     //工具
+        // UtilService     //工具
     ],
     bootstrap: [AppComponent]
 })
