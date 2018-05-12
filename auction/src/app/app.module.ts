@@ -25,6 +25,7 @@ import { TestChildComponent } from './test-child/test-child.component';
 import { FormComponent } from './form/form.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { HeightlightDirective } from './directive/heightlight.directive';
 import { TempleteFormComponent } from './templete-form/templete-form.component';
 
 const routerConfig: Routes = [
@@ -64,6 +65,7 @@ const routerConfig: Routes = [
         FormComponent,
         ParentComponent,
         ChildComponent,
+        HeightlightDirective,
         TempleteFormComponent
     ],
     imports: [
